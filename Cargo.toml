@@ -17,9 +17,9 @@ categories = ["cryptography::cryptocurrencies"]
 crate-type = ["lib", "staticlib", "cdylib"]
 name = "ldk_node"
 
-[[bin]]
-name = "uniffi-bindgen"
-path = "uniffi-bindgen.rs"
+#[[bin]]
+#name = "uniffi-bindgen"
+#path = "uniffi-bindgen.rs"
 
 [profile.release-smaller]
 inherits = "release"
@@ -32,6 +32,8 @@ panic = 'abort'     # Abort on panic
 default = []
 
 [dependencies]
+colored = "2.0.4"
+rustyline = { version = "12.0.0", features = ["derive"] }
 lightning = { version = "0.0.116", features = ["max_level_trace", "std"] }
 lightning-invoice = { version = "0.24.0" }
 lightning-net-tokio = { version = "0.0.116" }
